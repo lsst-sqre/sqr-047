@@ -127,6 +127,9 @@ Architecture:
 
 * The architecture of nublado should use JupyterLab at its core.
   This means that the architecture should be structured such that upgrading JupyterLab should be as easy as possible.
+* The architecture should allow modifying vanilla JupyterLab code to provide LSST specific specializations.
+  A specific use case is modifying the content of alert windows because e.g. behavious is different behind a VPN than without one.
+  See `DM-26420 <https://jira.lsstcorp.org/browse/DM-26420>`_ for discussion of this use case.
 * Any user action that degrades service performance should be able to be mitigated by the operations team without any kind of intervention from the user.
   This means we should not need to ask users to close tabs in order to get readable logs back.
 * Things like mobu or workflow should be possible: i.e. simulating user interactions and notebook CI driven through a programmatic mechanism.
